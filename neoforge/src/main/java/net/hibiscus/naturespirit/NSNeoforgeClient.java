@@ -3,13 +3,11 @@ package net.hibiscus.naturespirit;
 import java.util.List;
 import java.util.function.Supplier;
 import net.hibiscus.naturespirit.client.NSClient;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -26,11 +24,8 @@ public final class NSNeoforgeClient {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            for (Supplier<WoodType> woodType : NSClient.SHEET_WOOD_TYPES) {
-                Sheets.addWoodType(woodType.get());
-            }
-        });
+        // MC 26.2: Sheets.addWoodType / SIGN_SPRITES removed; signs use block models + text-only BER.
+        // WoodType.register(...) still happens at block bootstrap.
     }
 
     @SubscribeEvent

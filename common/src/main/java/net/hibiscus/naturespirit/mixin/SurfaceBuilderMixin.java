@@ -5,7 +5,7 @@ import net.hibiscus.naturespirit.config.NSConfig;
 import net.hibiscus.naturespirit.registration.NSBiomes;
 import net.hibiscus.naturespirit.registration.NSWorldGen;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
+import java.util.Set;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.biome.Biome;
@@ -57,8 +57,8 @@ public abstract class SurfaceBuilderMixin {
   }
 
   @Inject(method = "buildSurface", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/Holder;is(Lnet/minecraft/resources/ResourceKey;)Z", ordinal = 0))
-  private void injectPillars(RandomState noiseConfig, BiomeManager biomeAccess, Registry<Biome> biomeRegistry, boolean useLegacyRandom, WorldGenerationContext heightContext,
-      ChunkAccess chunk, NoiseChunk chunkNoiseSampler, SurfaceRules.RuleSource materialRule,
+  private void injectPillars(RandomState noiseConfig, BiomeManager biomeAccess, boolean useLegacyRandom, WorldGenerationContext heightContext,
+      ChunkAccess chunk, NoiseChunk chunkNoiseSampler, SurfaceRules.RuleSource materialRule, Set<Holder<Biome>> possibleBiomes,
       CallbackInfo ci,
       @Local Holder<Biome> registryEntry, @Local(ordinal = 2) int k, @Local(ordinal = 3) int l, @Local(ordinal = 4) int m, @Local(ordinal = 5) int n,
       @Local BlockColumn blockColumn) {

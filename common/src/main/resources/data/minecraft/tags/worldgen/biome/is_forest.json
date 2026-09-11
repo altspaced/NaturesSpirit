@@ -9,6 +9,11 @@
     "natures_spirit:sugi_forest",
     "natures_spirit:windswept_sugi_forest",
     "#natures_spirit:is_wisteria",
-    "natures_spirit:fir_forest"
+    "natures_spirit:fir_forest",
+    "natures_spirit:snowy_fir_forest",
+    "natures_spirit:snowy_redwood_forest",
+    "natures_spirit:cedar_thicket",
+    "natures_spirit:woody_highlands",
+    "natures_spirit:boreal_taiga"
   ]
 }

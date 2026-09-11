@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import net.hibiscus.naturespirit.NaturesSpirit;
 import net.hibiscus.naturespirit.registration.NSBlocks;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.cauldron.CauldronInteractions;

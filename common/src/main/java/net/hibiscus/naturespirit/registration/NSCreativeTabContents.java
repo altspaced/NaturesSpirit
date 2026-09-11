@@ -12,6 +12,7 @@ import net.hibiscus.naturespirit.registration.sets.WoodSet;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
@@ -392,7 +393,7 @@ public final class NSCreativeTabContents {
     }
 
     private static void coloredBlocks(TabOutput output) {
-        output.insertAfter(Items.PINK_TERRACOTTA.getDefaultInstance(), NSBlocks.KAOLIN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
+        output.insertAfter(Items.DYED_TERRACOTTA.pick(DyeColor.PINK).getDefaultInstance(), NSBlocks.KAOLIN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.KAOLIN.get().asItem().getDefaultInstance(), NSBlocks.WHITE_KAOLIN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.WHITE_KAOLIN.get().asItem().getDefaultInstance(), NSBlocks.LIGHT_GRAY_KAOLIN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.LIGHT_GRAY_KAOLIN.get().asItem().getDefaultInstance(), NSBlocks.GRAY_KAOLIN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -543,7 +544,7 @@ public final class NSCreativeTabContents {
         output.insertAfter(NSBlocks.PURPLE_CHALK_SLAB.get().asItem().getDefaultInstance(), NSBlocks.MAGENTA_CHALK_SLAB.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.MAGENTA_CHALK_SLAB.get().asItem().getDefaultInstance(), NSBlocks.PINK_CHALK_SLAB.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
 
-        output.insertAfter(Items.PINK_CANDLE.getDefaultInstance(), NSBlocks.WHITE_PAPER_LANTERN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
+        output.insertAfter(Items.DYED_CANDLE.pick(DyeColor.PINK).getDefaultInstance(), NSBlocks.WHITE_PAPER_LANTERN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.WHITE_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSBlocks.LIGHT_GRAY_PAPER_LANTERN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.LIGHT_GRAY_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSBlocks.GRAY_PAPER_LANTERN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);
         output.insertAfter(NSBlocks.GRAY_PAPER_LANTERN.get().asItem().getDefaultInstance(), NSBlocks.BLACK_PAPER_LANTERN.get().asItem().getDefaultInstance(), TabVisibility.PARENT_AND_SEARCH_TABS);

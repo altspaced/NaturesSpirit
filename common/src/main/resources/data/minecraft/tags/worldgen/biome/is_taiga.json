@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "natures_spirit:boreal_taiga",
+    "natures_spirit:fir_forest",
+    "natures_spirit:snowy_fir_forest",
+    "natures_spirit:snowy_redwood_forest",
+    "natures_spirit:coniferous_covert"
+  ]
+}

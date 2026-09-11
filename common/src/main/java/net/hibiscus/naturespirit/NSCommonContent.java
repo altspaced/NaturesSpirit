@@ -17,7 +17,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.entity.npc.villager.VillagerType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 
 public final class NSCommonContent {
 
@@ -38,17 +38,19 @@ public final class NSCommonContent {
         pack("arts_and_crafts_dat", PackType.SERVER_DATA, "arts_and_crafts", PackSource.BUILT_IN, true, artsAndCrafts);
         pack("plank_consistency", PackType.CLIENT_RESOURCES, "plank_consistency", PackSource.FEATURE, false, () -> true);
         pack("emissive_ores_compatibility", PackType.CLIENT_RESOURCES, "emissive_ores_compatibility", PackSource.FEATURE, false, () -> true);
-        pack("modified_badlands", PackType.SERVER_DATA, "modified_badlands", PackSource.BUILT_IN, true, () -> NSConfig.badlandsToggle);
-        pack("modified_birch_forest", PackType.SERVER_DATA, "modified_birch_forest", PackSource.BUILT_IN, true, () -> NSConfig.birchForestToggle);
-        pack("modified_dark_forest", PackType.SERVER_DATA, "modified_dark_forest", PackSource.BUILT_IN, true, () -> NSConfig.darkForestToggle);
-        pack("modified_desert", PackType.SERVER_DATA, "modified_desert", PackSource.BUILT_IN, true, () -> NSConfig.desertToggle);
-        pack("modified_flower_forest", PackType.SERVER_DATA, "modified_flower_forest", PackSource.BUILT_IN, true, () -> NSConfig.flowerForestToggle);
-        pack("modified_jungle", PackType.SERVER_DATA, "modified_jungle", PackSource.BUILT_IN, true, () -> NSConfig.jungleToggle);
-        pack("modified_mountain_biomes", PackType.SERVER_DATA, "modified_mountain_biomes", PackSource.BUILT_IN, true, () -> NSConfig.mountainBiomesToggle);
-        pack("modified_savannas", PackType.SERVER_DATA, "modified_savannas", PackSource.BUILT_IN, true, () -> NSConfig.savannaToggle);
-        pack("modified_swamp", PackType.SERVER_DATA, "modified_swamp", PackSource.BUILT_IN, true, () -> NSConfig.swampToggle);
-        pack("modified_vanilla_trees", PackType.SERVER_DATA, "modified_vanilla_trees", PackSource.BUILT_IN, false, () -> NSConfig.vanillaTreesToggle);
-        pack("modified_windswept_hills", PackType.SERVER_DATA, "modified_windswept_hills", PackSource.BUILT_IN, true, () -> NSConfig.windsweptHillsToggle);
+        // modified_* packs fully replace vanilla biome JSON. With Terralith they stomp Terralith's
+        // meadow/desert/etc. and can reintroduce feature-order cycles - gated via modifiedDatapackEnabled.
+        pack("modified_badlands", PackType.SERVER_DATA, "modified_badlands", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.badlandsToggle));
+        pack("modified_birch_forest", PackType.SERVER_DATA, "modified_birch_forest", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.birchForestToggle));
+        pack("modified_dark_forest", PackType.SERVER_DATA, "modified_dark_forest", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.darkForestToggle));
+        pack("modified_desert", PackType.SERVER_DATA, "modified_desert", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.desertToggle));
+        pack("modified_flower_forest", PackType.SERVER_DATA, "modified_flower_forest", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.flowerForestToggle));
+        pack("modified_jungle", PackType.SERVER_DATA, "modified_jungle", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.jungleToggle));
+        pack("modified_mountain_biomes", PackType.SERVER_DATA, "modified_mountain_biomes", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.mountainBiomesToggle));
+        pack("modified_savannas", PackType.SERVER_DATA, "modified_savannas", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.savannaToggle));
+        pack("modified_swamp", PackType.SERVER_DATA, "modified_swamp", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.swampToggle));
+        pack("modified_vanilla_trees", PackType.SERVER_DATA, "modified_vanilla_trees", PackSource.BUILT_IN, false, () -> NSConfig.modifiedDatapackEnabled(NSConfig.vanillaTreesToggle));
+        pack("modified_windswept_hills", PackType.SERVER_DATA, "modified_windswept_hills", PackSource.BUILT_IN, true, () -> NSConfig.modifiedDatapackEnabled(NSConfig.windsweptHillsToggle));
     }
 
     private static void pack(String name, PackType type, String translationKey, PackSource source, boolean alwaysActive, BooleanSupplier condition) {
@@ -60,7 +62,7 @@ public final class NSCommonContent {
     }
 
     private static void blockEntityBlocks() {
-        NSCommonHooks.BLOCK_ENTITY_BLOCKS.add(new NSCommonHooks.BlockEntityBlocks(() -> BlockEntityType.SIGN, List.of(
+        NSCommonHooks.BLOCK_ENTITY_BLOCKS.add(new NSCommonHooks.BlockEntityBlocks(() -> BlockEntityTypes.SIGN, List.of(
                 NSBlocks.REDWOOD.getSign(),
                 NSBlocks.REDWOOD.getWallSign(),
                 NSBlocks.SUGI.getSign(),
@@ -98,7 +100,7 @@ public final class NSCommonContent {
                 NSBlocks.PAPER_SIGN,
                 NSBlocks.PAPER_WALL_SIGN
         )));
-        NSCommonHooks.BLOCK_ENTITY_BLOCKS.add(new NSCommonHooks.BlockEntityBlocks(() -> BlockEntityType.HANGING_SIGN, List.of(
+        NSCommonHooks.BLOCK_ENTITY_BLOCKS.add(new NSCommonHooks.BlockEntityBlocks(() -> BlockEntityTypes.HANGING_SIGN, List.of(
                 NSBlocks.REDWOOD.getHangingSign(),
                 NSBlocks.REDWOOD.getHangingWallSign(),
                 NSBlocks.SUGI.getHangingSign(),

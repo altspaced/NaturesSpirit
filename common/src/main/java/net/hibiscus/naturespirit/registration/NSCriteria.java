@@ -2,7 +2,7 @@ package net.hibiscus.naturespirit.registration;
 
 
 import net.hibiscus.naturespirit.advancements.CoconutHitCriterion;
-import net.minecraft.advancements.CriterionTrigger;
+import net.minecraft.advancements.triggers.CriterionTrigger;
 import net.minecraft.core.registries.Registries;
 
 public class NSCriteria {

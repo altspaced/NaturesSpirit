@@ -1,0 +1,17 @@
+{
+  "predicate": {
+    "type": "lithostitched:mod_loaded",
+    "mod_id": "terralith"
+  },
+  "type": "lithostitched:replace_climate",
+  "priority": 1500,
+  "biomes": [
+    "terralith:gravel_desert"
+  ],
+  "climate": {
+    "temperature": 0.35,
+    "downfall": 0.5,
+    "has_precipitation": true,
+    "temperature_modifier": "frozen"
+  }
+}

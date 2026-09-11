@@ -64,7 +64,7 @@ public final class LithostitchedEventHandlers {
                     Identifier.fromNamespaceAndPath(NaturesSpirit.MOD_ID, "surface_rules"),
                     WorldgenModifier.builder()
                             .priority(3000)  // default is 1000; we set it at 3000 to let datapacks override our surface rules by default
-                            .addSurfaceRule(Level.OVERWORLD, InjectionType.PREPEND, NSSurfaceRules.makeRules())
+                            .addSurfaceRule(Level.OVERWORLD, InjectionType.PREPEND, NSSurfaceRules.makeRules(registries.lookupOrThrow(Registries.BIOME)))
             );
         });
     }

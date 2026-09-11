@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "natures_spirit:coniferous_covert",
+    "natures_spirit:fir_forest",
+    "natures_spirit:snowy_fir_forest",
+    "natures_spirit:boreal_taiga",
+    "natures_spirit:redwood_forest",
+    "natures_spirit:snowy_redwood_forest",
+    "natures_spirit:cedar_thicket",
+    "natures_spirit:sugi_forest",
+    "natures_spirit:blooming_sugi_forest",
+    "natures_spirit:windswept_sugi_forest"
+  ]
+}

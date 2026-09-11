@@ -186,29 +186,29 @@ public class NSBlocks {
   public static final NSBlockHolder<FlowerPotBlock> POTTED_SHIITAKE_MUSHROOM = registerPottedBlock("potted_shiitake_mushroom", SHIITAKE_MUSHROOM);
 
 
-  public static final FlowerSet LAVENDER = new FlowerSet("lavender", Items.PURPLE_DYE, FlowerSet.FlowerPreset.BIG_TALL);
-  public static final FlowerSet BLEEDING_HEART = new FlowerSet("bleeding_heart", Items.PINK_DYE, FlowerSet.FlowerPreset.BIG_TALL);
-  public static final FlowerSet BLUE_BULBS = new FlowerSet("blue_bulbs", Items.BLUE_DYE, FlowerSet.FlowerPreset.BIG_TALL);
-  public static final FlowerSet CARNATION = new FlowerSet("carnation", Items.RED_DYE, FlowerSet.FlowerPreset.BIG_TALL);
-  public static final FlowerSet GARDENIA = new FlowerSet("gardenia", Items.WHITE_DYE, FlowerSet.FlowerPreset.TALL);
-  public static final FlowerSet SNAPDRAGON = new FlowerSet("snapdragon", Items.PINK_DYE, FlowerSet.FlowerPreset.TALL);
-  public static final FlowerSet FOXGLOVE = new FlowerSet("foxglove", Items.PURPLE_DYE, FlowerSet.FlowerPreset.TALL);
-  public static final FlowerSet BEGONIA = new FlowerSet("begonia", Items.ORANGE_DYE, FlowerSet.FlowerPreset.TALL);
-  public static final FlowerSet MARIGOLD = new FlowerSet("marigold", Items.ORANGE_DYE, MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet BLUEBELL = new FlowerSet("bluebell", Items.BLUE_DYE, MobEffects.HASTE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet TIGER_LILY = new FlowerSet("tiger_lily", Items.ORANGE_DYE, MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet PURPLE_WILDFLOWER = new FlowerSet("purple_wildflower", Items.PURPLE_DYE, MobEffects.SLOW_FALLING, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet YELLOW_WILDFLOWER = new FlowerSet("yellow_wildflower", Items.YELLOW_DYE, MobEffects.SLOW_FALLING, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet RED_HEATHER = new FlowerSet("red_heather", Items.RED_DYE, MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet WHITE_HEATHER = new FlowerSet("white_heather", Items.WHITE_DYE, MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet PURPLE_HEATHER = new FlowerSet("purple_heather", Items.PURPLE_DYE, MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
-  public static final FlowerSet ANEMONE = new FlowerSet("anemone", Items.MAGENTA_DYE, MobEffects.RESISTANCE, FlowerSet.FlowerPreset.MID_SMALL);
-  public static final FlowerSet DWARF_BLOSSOMS = new FlowerSet("dwarf_blossoms", Items.PINK_DYE, MobEffects.RESISTANCE, FlowerSet.FlowerPreset.MID_SMALL);
-  public static final FlowerSet PROTEA = new FlowerSet("protea", Items.PINK_DYE, MobEffects.WATER_BREATHING, FlowerSet.FlowerPreset.MID_SMALL);
-  public static final FlowerSet HIBISCUS = new FlowerSet("hibiscus", Items.RED_DYE, MobEffects.LUCK, FlowerSet.FlowerPreset.SMALL);
-  public static final FlowerSet BLUE_IRIS = new FlowerSet("blue_iris", Items.LIGHT_BLUE_DYE, MobEffects.STRENGTH, FlowerSet.FlowerPreset.SMALL);
-  public static final FlowerSet BLACK_IRIS = new FlowerSet("black_iris", Items.BLACK_DYE, MobEffects.STRENGTH, FlowerSet.FlowerPreset.SMALL);
-  public static final FlowerSet RUBY_BLOSSOMS = new FlowerSet("ruby_blossoms", Items.RED_DYE, MobEffects.JUMP_BOOST, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet LAVENDER = new FlowerSet("lavender", Items.DYE.pick(DyeColor.PURPLE), FlowerSet.FlowerPreset.BIG_TALL);
+  public static final FlowerSet BLEEDING_HEART = new FlowerSet("bleeding_heart", Items.DYE.pick(DyeColor.PINK), FlowerSet.FlowerPreset.BIG_TALL);
+  public static final FlowerSet BLUE_BULBS = new FlowerSet("blue_bulbs", Items.DYE.pick(DyeColor.BLUE), FlowerSet.FlowerPreset.BIG_TALL);
+  public static final FlowerSet CARNATION = new FlowerSet("carnation", Items.DYE.pick(DyeColor.RED), FlowerSet.FlowerPreset.BIG_TALL);
+  public static final FlowerSet GARDENIA = new FlowerSet("gardenia", Items.DYE.pick(DyeColor.WHITE), FlowerSet.FlowerPreset.TALL);
+  public static final FlowerSet SNAPDRAGON = new FlowerSet("snapdragon", Items.DYE.pick(DyeColor.PINK), FlowerSet.FlowerPreset.TALL);
+  public static final FlowerSet FOXGLOVE = new FlowerSet("foxglove", Items.DYE.pick(DyeColor.PURPLE), FlowerSet.FlowerPreset.TALL);
+  public static final FlowerSet BEGONIA = new FlowerSet("begonia", Items.DYE.pick(DyeColor.ORANGE), FlowerSet.FlowerPreset.TALL);
+  public static final FlowerSet MARIGOLD = new FlowerSet("marigold", Items.DYE.pick(DyeColor.ORANGE), MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet BLUEBELL = new FlowerSet("bluebell", Items.DYE.pick(DyeColor.BLUE), MobEffects.HASTE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet TIGER_LILY = new FlowerSet("tiger_lily", Items.DYE.pick(DyeColor.ORANGE), MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet PURPLE_WILDFLOWER = new FlowerSet("purple_wildflower", Items.DYE.pick(DyeColor.PURPLE), MobEffects.SLOW_FALLING, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet YELLOW_WILDFLOWER = new FlowerSet("yellow_wildflower", Items.DYE.pick(DyeColor.YELLOW), MobEffects.SLOW_FALLING, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet RED_HEATHER = new FlowerSet("red_heather", Items.DYE.pick(DyeColor.RED), MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet WHITE_HEATHER = new FlowerSet("white_heather", Items.DYE.pick(DyeColor.WHITE), MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet PURPLE_HEATHER = new FlowerSet("purple_heather", Items.DYE.pick(DyeColor.PURPLE), MobEffects.FIRE_RESISTANCE, FlowerSet.FlowerPreset.BIG_SMALL);
+  public static final FlowerSet ANEMONE = new FlowerSet("anemone", Items.DYE.pick(DyeColor.MAGENTA), MobEffects.RESISTANCE, FlowerSet.FlowerPreset.MID_SMALL);
+  public static final FlowerSet DWARF_BLOSSOMS = new FlowerSet("dwarf_blossoms", Items.DYE.pick(DyeColor.PINK), MobEffects.RESISTANCE, FlowerSet.FlowerPreset.MID_SMALL);
+  public static final FlowerSet PROTEA = new FlowerSet("protea", Items.DYE.pick(DyeColor.PINK), MobEffects.WATER_BREATHING, FlowerSet.FlowerPreset.MID_SMALL);
+  public static final FlowerSet HIBISCUS = new FlowerSet("hibiscus", Items.DYE.pick(DyeColor.RED), MobEffects.LUCK, FlowerSet.FlowerPreset.SMALL);
+  public static final FlowerSet BLUE_IRIS = new FlowerSet("blue_iris", Items.DYE.pick(DyeColor.LIGHT_BLUE), MobEffects.STRENGTH, FlowerSet.FlowerPreset.SMALL);
+  public static final FlowerSet BLACK_IRIS = new FlowerSet("black_iris", Items.DYE.pick(DyeColor.BLACK), MobEffects.STRENGTH, FlowerSet.FlowerPreset.SMALL);
+  public static final FlowerSet RUBY_BLOSSOMS = new FlowerSet("ruby_blossoms", Items.DYE.pick(DyeColor.RED), MobEffects.JUMP_BOOST, FlowerSet.FlowerPreset.BIG_SMALL);
   public static final FlowerSet SILVERBUSH = new FlowerSet("silverbush", FlowerSet.FlowerPreset.BIG_TALL);
 
 

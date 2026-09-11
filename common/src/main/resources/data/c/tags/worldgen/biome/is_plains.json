@@ -1,8 +1,9 @@
 {
   "replace": false,
   "values": [
-    "natures_spirit:alpine_clearings",
-    "natures_spirit:prairie",
-    "natures_spirit:shrubland"
+    "#natures_spirit:is_field",
+    "natures_spirit:golden_wilds",
+    "natures_spirit:shrubland",
+    "natures_spirit:flowering_shrubland"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "predicate": {
+    "type": "lithostitched:mod_loaded",
+    "mod_id": "terralith"
+  },
+  "type": "lithostitched:replace_climate",
+  "priority": 1500,
+  "biomes": [
+    "terralith:scarlet_mountains"
+  ],
+  "climate": {
+    "temperature": 0.4,
+    "downfall": 0.4,
+    "has_precipitation": true
+  }
+}

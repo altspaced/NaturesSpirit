@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "natures_spirit:arid_savanna"
+    "natures_spirit:arid_savanna",
+    "natures_spirit:oak_savanna",
+    "natures_spirit:chaparral",
+    "natures_spirit:wooded_drylands"
   ]
 }

@@ -1,44 +1,25 @@
 {
-  "type": "minecraft:random_patch",
+  "type": "minecraft:simple_block",
   "config": {
-    "tries": 24,
-    "xz_spread": 6,
-    "y_spread": 2,
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
-              {
-                "weight": 3,
-                "data": {
-                  "Name": "minecraft:dead_bush"
-                }
-              },
-              {
-                "weight": 3,
-                "data": {
-                  "Name": "natures_spirit:scorched_grass"
-                }
-              },
-              {
-                "weight": 1,
-                "data": {
-                  "Name": "minecraft:cactus"
-                }
-              }
-            ]
-          }
-        }
-      },
-      "placement": [
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
         {
-          "type": "minecraft:block_predicate_filter",
-          "predicate": {
-            "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:dead_bush"
+          }
+        },
+        {
+          "weight": 3,
+          "data": {
+            "Name": "natures_spirit:scorched_grass"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:cactus"
           }
         }
       ]

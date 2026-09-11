@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.hibiscus.naturespirit.registration.NSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -52,11 +52,11 @@ public class BrushItemMixin {
 
   @Unique
   private ItemEntity naturespirit$getChalkPowder(Level world, BlockPos blockPos) {
-    double d = EntityType.ITEM.getWidth();
+    double d = EntityTypes.ITEM.getWidth();
     double e = 1.0 - d;
     double f = d / 2.0;
     double g = (double) blockPos.getX() + 0.5 * e + f;
-    double h = (double) blockPos.getY() + 0.25 + (double)(EntityType.ITEM.getHeight() / 2.0F);
+    double h = (double) blockPos.getY() + 0.25 + (double)(EntityTypes.ITEM.getHeight() / 2.0F);
     double i = (double) blockPos.getZ() + 0.5 * e + f;
     return new ItemEntity(world, g, h, i, new ItemStack(NSBlocks.CHALK_POWDER.get(), world.getRandom().nextIntBetweenInclusive(1, 3)));
   }

@@ -89,7 +89,7 @@ public class ReplaceableCaveCarver extends WorldCarver<ReplaceableCaveCarverConf
       } else {
         chunk.setBlockState(pos, blockState2);
         if (aquiferSampler.shouldScheduleFluidUpdate() && !blockState2.getFluidState().isEmpty()) {
-          chunk.markPosForPostprocessing(pos);
+          chunk.markPosForPostProcessing(pos);
         }
 
         if (replacedGrassy.isTrue()) {
@@ -98,7 +98,7 @@ public class ReplaceableCaveCarver extends WorldCarver<ReplaceableCaveCarverConf
             context.topMaterial(posToBiome, chunk, tmp, !blockState2.getFluidState().isEmpty()).ifPresent((state) -> {
               chunk.setBlockState(tmp, state);
               if (!state.getFluidState().isEmpty()) {
-                chunk.markPosForPostprocessing(tmp);
+                chunk.markPosForPostProcessing(tmp);
               }
 
             });

@@ -1,6 +1,7 @@
 package net.hibiscus.naturespirit.config;
 
 import net.hibiscus.naturespirit.NaturesSpirit;
+import net.hibiscus.naturespirit.platform.Services;
 
 import java.nio.file.Path;
 
@@ -32,6 +33,14 @@ public final class NSConfig {
     public static boolean savannaToggle;
     public static boolean darkForestToggle;
     public static boolean windsweptHillsToggle;
+
+    /** True when the Terralith mod is on the classpath at config load. */
+    public static boolean terralithLoaded;
+    /**
+     * When true and {@link #terralithLoaded}, all modified_* vanilla-biome restyle datapacks stay off
+     * regardless of the individual toggles below (prevents biome JSON stomps / feature-order clashes).
+     */
+    public static boolean autoSafeWithTerralith;
 
     public static boolean hasSugiForest;
     public static boolean hasWindsweptSugiForest;
@@ -108,18 +117,23 @@ public final class NSConfig {
         sugiAndStratifiedPillars = file.define("misc.sugi_and_stratified_pillars", true,
                 "Sugi / stratified desert pillars (disable on low-end devices)");
 
-        vanillaTreesToggle = file.define("datapack.vanilla_trees_toggle", false, "Replace vanilla tree styles");
-        birchForestToggle = file.define("datapack.birch_forest_toggle", true, "Restyle birch forests");
-        flowerForestToggle = file.define("datapack.flower_forest_toggle", true, "Restyle flower forests");
-        jungleToggle = file.define("datapack.jungle_toggle", true, "Restyle jungles");
-        swampToggle = file.define("datapack.swamp_toggle", true, "Restyle swamps");
-        desertToggle = file.define("datapack.desert_toggle", true, "Restyle deserts");
-        badlandsToggle = file.define("datapack.badlands_toggle", true, "Restyle badlands");
+        terralithLoaded = Services.PLATFORM.isModLoaded("terralith");
+        autoSafeWithTerralith = file.define("datapack.auto_safe_with_terralith", true,
+                "When Terralith is present, auto-disable ALL NS modified_* vanilla biome restyle datapacks (avoids stomping Terralith meadow/desert/etc. and feature-order clashes). Set false to honor the individual toggles below even with Terralith.");
+
+        // Defaults stay ON for NS-alone worlds. With Terralith + auto_safe, runtime gating turns them off.
+        vanillaTreesToggle = file.define("datapack.vanilla_trees_toggle", false, "Replace vanilla tree styles (ignored when auto_safe_with_terralith + Terralith)");
+        birchForestToggle = file.define("datapack.birch_forest_toggle", true, "Restyle birch forests (ignored when auto_safe_with_terralith + Terralith)");
+        flowerForestToggle = file.define("datapack.flower_forest_toggle", true, "Restyle flower forests (ignored when auto_safe_with_terralith + Terralith)");
+        jungleToggle = file.define("datapack.jungle_toggle", true, "Restyle jungles (ignored when auto_safe_with_terralith + Terralith)");
+        swampToggle = file.define("datapack.swamp_toggle", true, "Restyle swamps (ignored when auto_safe_with_terralith + Terralith)");
+        desertToggle = file.define("datapack.desert_toggle", true, "Restyle deserts (ignored when auto_safe_with_terralith + Terralith)");
+        badlandsToggle = file.define("datapack.badlands_toggle", true, "Restyle badlands (ignored when auto_safe_with_terralith + Terralith)");
         mountainBiomesToggle = file.define("datapack.mountain_biomes_toggle", true,
-                "Restyle mountain biomes (includes Terralith-safe meadow feature order)");
-        savannaToggle = file.define("datapack.savanna_toggle", true, "Restyle savannas");
-        darkForestToggle = file.define("datapack.dark_forest_toggle", true, "Restyle dark forests");
-        windsweptHillsToggle = file.define("datapack.windswept_hills_toggle", true, "Restyle windswept hills");
+                "Restyle mountain biomes / meadow (ignored when auto_safe_with_terralith + Terralith; Terralith already ships a safe meadow feature order)");
+        savannaToggle = file.define("datapack.savanna_toggle", true, "Restyle savannas (ignored when auto_safe_with_terralith + Terralith)");
+        darkForestToggle = file.define("datapack.dark_forest_toggle", true, "Restyle dark forests (ignored when auto_safe_with_terralith + Terralith)");
+        windsweptHillsToggle = file.define("datapack.windswept_hills_toggle", true, "Restyle windswept hills (ignored when auto_safe_with_terralith + Terralith)");
 
         hasSugiForest = file.define("biome.has_sugi_forest", true, "Sugi forest");
         hasWindsweptSugiForest = file.define("biome.has_windswept_sugi_forest", true, "Windswept sugi forest");
@@ -174,5 +188,21 @@ public final class NSConfig {
         hasFloralRidges = file.define("biome.has_floral_ridges", true, "Floral ridges");
 
         file.save();
+
+        if (terralithLoaded && autoSafeWithTerralith) {
+            NaturesSpirit.LOG.info(
+                    "Terralith detected - auto-disabling NS modified_* builtin datapacks (set datapack.auto_safe_with_terralith=false to override).");
+        } else if (terralithLoaded) {
+            NaturesSpirit.LOG.info(
+                    "Terralith detected - modified_* datapacks follow individual toggles (auto_safe_with_terralith=false).");
+        }
+    }
+
+    /**
+     * Whether a modified_* builtin datapack should register.
+     * With Terralith + {@link #autoSafeWithTerralith}, returns false so Terralith biome JSON wins.
+     */
+    public static boolean modifiedDatapackEnabled(boolean toggle) {
+        return toggle && !(terralithLoaded && autoSafeWithTerralith);
     }
 }
