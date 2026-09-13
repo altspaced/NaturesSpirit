@@ -1,7 +1,5 @@
 <div align="center">
-
-<img src=".github/images/natures-spirit-banner.png" alt="Nature's Spirit — Minecraft 26.1 Multiloader Port" width="920"/>
-
+  
 # Nature's Spirit — Minecraft 26.1
 
 Fabric · NeoForge
@@ -76,37 +74,6 @@ Full detail lives in [`CHANGELOG.md`](./CHANGELOG.md).
 
 ---
 
-## Build
-
-```bash
-# Fabric
-./gradlew :fabric:jar
-
-# NeoForge
-./gradlew :neoforge:jar
-```
-
-Outputs:
-
-- `fabric/build/libs/natures_spirit-fabric-2.3.0+26.1.jar`
-- `neoforge/build/libs/natures_spirit-neoforge-2.3.0+26.1.jar`
-
-> Prefer loader-specific tasks. A blanket `./gradlew build` may hit unrelated tooling noise depending on environment.
-
----
-
-## Project layout
-
-```
-├── common/          Shared content, worldgen, config
-├── fabric/          Fabric entrypoints & packaging
-├── neoforge/        NeoForge entrypoints & packaging
-├── buildSrc/        Multiloader Gradle conventions
-├── .github/images/  README banner + logo
-├── gradle.properties
-└── settings.gradle
-```
-
 ## Credits
 
 - **Team Hibiscus** — authors of Nature's Spirit  
@@ -125,9 +92,3 @@ Nature's Spirit is licensed under Team Hibiscus's project license (All Rights Re
 This 26.1 port is distributed for compatibility and upstream contribution purposes — respect the original license when redistributing builds or assets.
 
 ---
-
-<div align="center">
-
-**Made for Minecraft 26.1** · Multiloader
-
-</div>
