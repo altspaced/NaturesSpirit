@@ -74,37 +74,6 @@ Full detail lives in [`CHANGELOG.md`](./CHANGELOG.md).
 
 ---
 
-## Build
-
-```bash
-# Fabric
-./gradlew :fabric:jar
-
-# NeoForge
-./gradlew :neoforge:jar
-```
-
-Outputs:
-
-- `fabric/build/libs/natures_spirit-fabric-2.3.0+26.2.jar`
-- `neoforge/build/libs/natures_spirit-neoforge-2.3.0+26.2.jar`
-
-> Prefer loader-specific tasks. A blanket `./gradlew build` may hit unrelated tooling noise depending on environment.
-
----
-
-## Project layout
-
-```
-├── common/          Shared content, worldgen, config
-├── fabric/          Fabric entrypoints & packaging
-├── neoforge/        NeoForge entrypoints & packaging
-├── buildSrc/        Multiloader Gradle conventions
-├── .github/images/  README banner + logo
-├── gradle.properties
-└── settings.gradle
-```
-
 ## Credits
 
 - **Team Hibiscus** — authors of Nature's Spirit  
