@@ -54,35 +54,13 @@ Worldgen integration uses **[Lithostitched](https://modrinth.com/mod/lithostitch
 
 ---
 
-## Highlights in this branch
-
-### Multiloader reliability
-- NeoForge cauldron registration works on **26.2.0.x** without requiring NeoForge 26.2.1+ APIs
-- Shared `common` module with Fabric / NeoForge loaders
-
-### Worldgen polish
-- Meadow feature-order fix for Terralith + Lithostitched coexistence
-- Softer hot/cold snow borders at biome edges
-- Optional Terralith plant sprinkle (unique feature IDs; only when Terralith is present)
-
-### Content / quality
-- Asset fixes (pizza model, water plants, Iris marigold mapping)
-- Tundra precipitation enabled
-- Explorer-friendly config defaults and comments
-
-Full detail lives in [`CHANGELOG.md`](./CHANGELOG.md).
-
----
-
 ## Credits
 
 - **Team Hibiscus** — authors of Nature's Spirit  
   Original projects: [NaturesSpirit](https://github.com/Team-Hibiscus/NaturesSpirit) · [NatureSpiritForge](https://github.com/Team-Hibiscus/NatureSpiritForge)
 - **Lithostitched** — biome / climate injection used for 26.2 worldgen blend
 
-This port does **not** claim ownership of Nature's Spirit. All rights remain with Team Hibiscus under their license. Please support the official Modrinth / CurseForge pages and Discord.
-
-README banner/logo assets live in [`.github/images/`](.github/images/) and follow Team Hibiscus's flowering-azalea icon theme for this 26.2 port page.
+This port does **not** claim ownership of Nature's Spirit. All rights remain with Team Hibiscus under their license. Please support the official Modrinth / CurseForge pages and Discord
 
 ---
 
