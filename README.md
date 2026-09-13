@@ -90,11 +90,3 @@ README banner/logo assets live in [`.github/images/`](.github/images/) and follo
 
 Nature's Spirit is licensed under Team Hibiscus's project license (All Rights Reserved / project-specific terms as published upstream).  
 This 26.2 port is distributed for compatibility and upstream contribution purposes — respect the original license when redistributing builds or assets.
-
----
-
-<div align="center">
-
-**Made for Minecraft 26.2** · Multiloader
-
-</div>
