@@ -26,21 +26,6 @@ Fabric · NeoForge
 
 ---
 
-## About
-
-Nature's Spirit expands Minecraft's overworld with biomes, blocks, and items that deepen vanilla immersion — from blooming deserts and grassy marshes to pastel chalk, dyeable kaolin, and a richer building palette.
-
-This repository packages that experience for **Minecraft 26.1** as a **multiloader** project:
-
-| Loader | Status | Artifact |
-|--------|--------|----------|
-| **Fabric** | Supported | `natures_spirit-fabric-2.3.0+26.1.jar` |
-| **NeoForge** | Supported | `natures_spirit-neoforge-2.3.0+26.1.jar` |
-
-Worldgen integration uses **[Lithostitched](https://modrinth.com/mod/lithostitched)** climate-region injectors (Terra Ferax / Flava / Laeta / Mater / Solaris) so Nature's Spirit can coexist with packs like **Terralith**, rather than rewriting foreign biomes by hand.
-
----
-
 ## Requirements
 
 | Dependency | Version / notes |
@@ -54,25 +39,6 @@ Worldgen integration uses **[Lithostitched](https://modrinth.com/mod/lithostitch
 
 ---
 
-## Highlights in this branch
-
-### Multiloader reliability
-- NeoForge cauldron registration works on **26.1.0.x** without requiring NeoForge 26.1.1+ APIs
-- Shared `common` module with Fabric / NeoForge loaders
-
-### Worldgen polish
-- Meadow feature-order fix for Terralith + Lithostitched coexistence
-- Softer hot/cold snow borders at biome edges
-- Optional Terralith plant sprinkle (unique feature IDs; only when Terralith is present)
-
-### Content / quality
-- Asset fixes (pizza model, water plants, Iris marigold mapping)
-- Tundra precipitation enabled
-- Explorer-friendly config defaults and comments
-
-Full detail lives in [`CHANGELOG.md`](./CHANGELOG.md).
-
----
 
 ## Credits
 
