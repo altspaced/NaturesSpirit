@@ -1,7 +1,5 @@
 <div align="center">
-
-<img src=".github/images/natures-spirit-banner.png" alt="Nature's Spirit — Minecraft 26.2 Multiloader Port" width="920"/>
-
+  
 # Nature's Spirit — Minecraft 26.2
 
 Fabric · NeoForge
